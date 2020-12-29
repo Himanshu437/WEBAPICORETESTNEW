@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEBAPICORETESTNEW", "WEBAPICORETESTNEW\WEBAPICORETESTNEW.csproj", "{582C4CF6-550F-4AFA-A110-27811B66E645}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{582C4CF6-550F-4AFA-A110-27811B66E645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{582C4CF6-550F-4AFA-A110-27811B66E645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{582C4CF6-550F-4AFA-A110-27811B66E645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{582C4CF6-550F-4AFA-A110-27811B66E645}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E436A80-B113-430E-8A07-A5AED4EE3359}
+	EndGlobalSection
+EndGlobal
