@@ -113,8 +113,10 @@ namespace WEBAPICORETESTNEW.Controllers
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                     expiration = token.ValidTo,
-                    User = user.UserName
-                });
+                    User = user.UserName,
+                    Role=userRoles
+
+                }) ;
             }
             return Unauthorized();
         }
