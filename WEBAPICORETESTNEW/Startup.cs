@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WEBAPICORETESTNEW.Authentication;
+using WEBAPICORETESTNEW.Models;
 
 namespace WEBAPICORETESTNEW
 {
@@ -31,7 +32,8 @@ namespace WEBAPICORETESTNEW
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conn")));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conn1")));
+            services.AddDbContext<AdminTestDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conn2")));
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
             services.AddCors();
