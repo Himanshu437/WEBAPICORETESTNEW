@@ -10,7 +10,7 @@ namespace WEBAPICORETESTNEW.Models
         public string Genre { get; set; }
         public string AuthorName { get; set; }
         public string PublisherName { get; set; }
-        public int? BoookCost { get; set; }
+   //     public int? BoookCost { get; set; }
         public string Edition { get; set; }
     }
 }

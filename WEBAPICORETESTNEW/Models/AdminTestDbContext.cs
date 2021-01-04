@@ -48,7 +48,7 @@ namespace WEBAPICORETESTNEW.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.BoookCost).HasColumnName("boook_cost");
+              //  entity.Property(e => e.BoookCost).HasColumnName("boook_cost");
 
                 entity.Property(e => e.Edition)
                     .HasColumnName("edition")
