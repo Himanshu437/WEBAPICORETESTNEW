@@ -22,37 +22,37 @@ namespace WEBAPICORETESTNEW.Controllers
 
         // GET: api/BookTests
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BookTest>>> GetBookTest()
+        public async Task<ActionResult<IEnumerable<BookTestnew>>> GetBookTestnew()
         {
-            return await _context.BookTest.ToListAsync();
+            return await _context.BookTestnew.ToListAsync();
         }
 
         // GET: api/BookTests/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BookTest>> GetBookTest(int id)
+        public async Task<ActionResult<BookTestnew>> GetBookTestnew(int id)
         {
-            var bookTest = await _context.BookTest.FindAsync(id);
+            var bookTestnew = await _context.BookTestnew.FindAsync(id);
 
-            if (bookTest == null)
+            if (bookTestnew == null)
             {
                 return NotFound();
             }
 
-            return bookTest;
+            return bookTestnew;
         }
 
         // PUT: api/BookTests/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBookTest(int id, BookTest bookTest)
+        public async Task<IActionResult> PutBookTestnew(int id, BookTestnew bookTestnew)
         {
-            if (id != bookTest.BookId)
+            if (id != bookTestnew.BookId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(bookTest).State = EntityState.Modified;
+            _context.Entry(bookTestnew).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace WEBAPICORETESTNEW.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BookTestExists(id))
+                if (!BookTestnewExists(id))
                 {
                     return NotFound();
                 }
@@ -77,33 +77,47 @@ namespace WEBAPICORETESTNEW.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BookTest>> PostBookTest(BookTest bookTest)
+        public async Task<ActionResult<BookTestnew>> PostBookTestnew(BookTestnew bookTestnew)
         {
-            _context.BookTest.Add(bookTest);
-            await _context.SaveChangesAsync();
+            _context.BookTestnew.Add(bookTestnew);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (BookTestnewExists(bookTestnew.BookId))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            return CreatedAtAction("GetBookTest", new { id = bookTest.BookId }, bookTest);
+            return CreatedAtAction("GetBookTestnew", new { id = bookTestnew.BookId }, bookTestnew);
         }
 
         // DELETE: api/BookTests/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BookTest>> DeleteBookTest(int id)
+        public async Task<ActionResult<BookTestnew>> DeleteBookTestnew(int id)
         {
-            var bookTest = await _context.BookTest.FindAsync(id);
-            if (bookTest == null)
+            var bookTestnew = await _context.BookTestnew.FindAsync(id);
+            if (bookTestnew == null)
             {
                 return NotFound();
             }
 
-            _context.BookTest.Remove(bookTest);
+            _context.BookTestnew.Remove(bookTestnew);
             await _context.SaveChangesAsync();
 
-            return bookTest;
+            return bookTestnew;
         }
 
-        private bool BookTestExists(int id)
+        private bool BookTestnewExists(int id)
         {
-            return _context.BookTest.Any(e => e.BookId == id);
+            return _context.BookTestnew.Any(e => e.BookId == id);
         }
     }
 }
